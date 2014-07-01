@@ -1,0 +1,56 @@
+#Skript wykonany przez Bawełniaty
+
+#----------[Ogólnie]----------
+options:
+variables:
+every 1 minute:
+	set {y} to year
+	set {m} to month
+	set {d} to day
+	set {h} to hour
+	set {m} to minute
+#----------[Pierwsze wejście]----------
+on first join:
+	if {server.%player%} is false:
+		send "Witaj w szkole Skript'a!"
+		send "Podaj swój nick na forum:"
+		set true to {wait.%player%}
+on chat:
+	if {wait.%player%} is true:
+		set message to {nick.%player%}
+every 3 seconds:
+	if {nick.%player%} is set:
+		if {s.%player%} is true:
+			set {wait.%player%} to false
+			send "Prawidłowo ustawiłeś swój z forum!"
+#----------[Wejście i wyjście]----------
+on join:
+	set join message to ""
+on leave:
+	set leave message to ""
+#----------[Stanie bez ruchu]----------
+on rightclick with diamond:
+	if nazwa:
+		player has the permission "ruch.ustaw":
+			loop all players:
+				set {lot.%loop-player%} to location player
+#----------[Nauczyciel]----------
+command /nauczyciel [<text>]:
+#----------[Wybieranie lekcji poprzez głosowanie]----------
+command /glos [<text>]:
+#----------[Temat lekcji na BossBar]----------
+
+#----------[Pomysły na lekcje]----------
+command /pomysl [<text>] [<text>] [<text>] [<text>] [<text>] [<text>] [<text>] [<text>]:
+#----------[Warny]----------
+command /warn
+#----------[Włączenie "Podnoszenie ręki"]---------
+on rightclick with stick:
+#----------[Podnoszenie ręki i rekordy]----------
+on rightclick:
+#----------[Oceny]----------
+on rightclick:
+#----------[Praca w grupie]----------
+command /zapros [<text>]:
+#----------[Zakończenie "roku"]----------
+on rightclick with blaze rod:
