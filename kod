@@ -54,3 +54,4 @@ on rightclick:
 command /zapros [<text>]:
 #----------[Zakończenie "roku"]----------
 on rightclick with blaze rod:
+	send "lol, brawo, zakonczyles szkole"
